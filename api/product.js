@@ -23,3 +23,19 @@ export const deleteProduct = async(id)=>{
         alert("Xóa thất bại")
     }
 }
+
+export const addProduct =async (data) =>{
+    try {
+        await fetch(`http://localhost:3000/products`,{
+            method: "post",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+       
+        
+    } catch (error) {
+        alert("Thêm thất bại")
+    }
+}

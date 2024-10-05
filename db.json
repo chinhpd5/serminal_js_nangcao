@@ -227,6 +227,30 @@
         "rate": 3.6,
         "count": 145
       }
+    },
+    {
+      "id": "f9e5",
+      "title": "sản phẩm mới",
+      "price": "10000",
+      "description": "mô tả",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    },
+    {
+      "id": "edd3",
+      "title": "test",
+      "price": "123",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    },
+    {
+      "id": "e602",
+      "title": "sp",
+      "price": "123",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
     }
   ],
   "carts": []
