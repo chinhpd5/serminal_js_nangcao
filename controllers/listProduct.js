@@ -1,4 +1,4 @@
-import {getAllProduct} from '../api/product.js'
+import {getAllProduct,deleteProduct} from '../api/product.js'
 
 const app ={
     //key: value
@@ -20,7 +20,7 @@ const app ={
                     <td>${product.description.substring(0,100)}...</td>
                     <td>
                         <a href="editProduct.html" class="btn btn-warning">Sửa</a>
-                        <button class="btn btn-danger btn-delete">Xóa</button>
+                        <button data-id="${product.id}" class="btn btn-danger btn-delete">Xóa</button>
                     </td>
                 </tr>
             `
@@ -32,6 +32,36 @@ const app ={
         // 2.3 gán trList vào tbody thông thuộc tính innerHTML
 
         tbodyElement.innerHTML = trList;
+
+        //========================
+        // Xử lý logic xóa
+        this.handleDelete();
+    },
+
+    handleDelete: function(){
+        // 1. lấy toàn bộ nút xóa: querySelectorAll
+        const btnDeletes =document.querySelectorAll('.btn-delete');
+        // console.log(btnDeletes);
+        // 2. Duyệt mảng và khai báo sự kiện
+        btnDeletes.forEach((item)=>{
+            // console.log(item);
+            item.addEventListener("click",()=>{
+                // console.log("click!!");
+                //2.1: xác nhận
+                if(window.confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")){
+                    // 2.2 lấy id của sản phẩm
+                    // cách 1: dataset
+                    // const id = item.dataset.id;  
+                    // cách 2: getAttribute   
+                    const id = item.getAttribute("data-id");
+                    // console.log(id);
+                    //3. Xóa sản phẩm
+                    deleteProduct(id);
+                }
+                
+            })
+            
+        })
         
     },
 
