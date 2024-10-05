@@ -39,3 +39,29 @@ export const addProduct =async (data) =>{
         alert("Thêm thất bại")
     }
 }
+
+export const getProductById = async(id)=>{
+    try {
+        const res = await fetch(`http://localhost:3000/products/${id}`)// mặc định method : get
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        alert("Lỗi")
+    }
+}
+
+export const updateProduct = async(id, data)=>{
+    try {
+        await fetch(`http://localhost:3000/products/${id}`,{
+            method: "put",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+       
+        
+    } catch (error) {
+        alert("Cập nhật thất bại")
+    }
+}

@@ -19,7 +19,7 @@ const app ={
                     <td>${product.category}</td>
                     <td>${product.description.substring(0,100)}...</td>
                     <td>
-                        <a href="editProduct.html" class="btn btn-warning">Sửa</a>
+                        <a href="editProduct.html?id=${product.id}" class="btn btn-warning">Sửa</a>
                         <button data-id="${product.id}" class="btn btn-danger btn-delete">Xóa</button>
                     </td>
                 </tr>
